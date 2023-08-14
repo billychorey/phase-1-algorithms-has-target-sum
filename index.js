@@ -1,5 +1,13 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i=0; i < array.length; i++) {
+    let complement = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === complement) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
@@ -8,6 +16,13 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  need to compare the values to see if they match the second parameter
+  for each item in the array, add another item in the array to see if it is equal to the second parameter
+
+  ***** after wathing the video, the solving for by subtracting and looking for what you need seems better
+  for each number in the array, subtract it from the second parameter and make it a new variable
+  look to see if the array has a value equal to the new value.
+  if not, go to the next item in the array
 */
 
 /*
